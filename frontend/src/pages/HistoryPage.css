@@ -1,0 +1,15 @@
+.history-delete {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #78857b;
+}
+
+.history-delete:hover {
+  background: #fff0ed;
+  color: #a33f2f;
+}

@@ -1,0 +1,79 @@
+body {
+  min-width: 0;
+}
+
+.dashboard-grid > * {
+  min-width: 0;
+}
+
+.model-status-card h3,
+.model-status-card p {
+  overflow-wrap: anywhere;
+}
+
+.model-status-card .readiness-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+}
+
+.model-status-card.status-ready .status-dot {
+  background: #24784e;
+}
+
+.model-status-card.status-not_configured .status-dot {
+  background: #a76b1e;
+}
+
+.model-status-card.status-unavailable .status-dot,
+.model-status-card.status-error .status-dot {
+  background: #b34b3e;
+}
+
+.dashboard-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 88px;
+  margin: 0;
+  color: #59665c;
+  font-size: 13px;
+}
+
+.dashboard-feedback-error {
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard-feedback-error p {
+  margin: 0;
+}
+
+.dashboard-retry {
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.dashboard-retry:focus-visible {
+  outline: 2px solid #176b4a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-card {
+    min-width: 0;
+  }
+
+  .stat-card:last-child {
+    grid-column: 1 / -1;
+  }
+}

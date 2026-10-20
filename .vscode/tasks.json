@@ -1,0 +1,127 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Leafline frontend for Cotton verification",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"dev",
+				"--",
+				"--host",
+				"127.0.0.1"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Leafline frontend lint",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"lint"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Leafline frontend production build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Cotton training process",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"-Id",
+				"15748"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Resume Cotton model training from epoch 2",
+			"type": "shell",
+			"command": "C:\\Crop_Disease_Detection_Sys\\ai-service\\tf-venv\\Scripts\\python.exe",
+			"args": [
+				"C:\\Crop_Disease_Detection_Sys\\ai-service\\train.py",
+				"--plantvillage-dataset",
+				"C:\\Crop_Disease_Detection_Sys\\ai-service\\dataset\\PlantVillage\\PlantVillage",
+				"--cotton-dataset",
+				"C:\\Crop_Disease_Detection_Sys\\Dataset\\cotton",
+				"--head-epochs",
+				"2",
+				"--fine-tune-epochs",
+				"2",
+				"--batch-size",
+				"32",
+				"--resume-checkpoint",
+				"C:\\Crop_Disease_Detection_Sys\\ai-service\\models\\candidates\\mobilenetv2-cotton-20261017T061257473625Z\\best-head.keras"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check resumed Cotton worker activity",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"-Id",
+				"12308"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Cotton training worker",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"-Name",
+				"python"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Identify Cotton training process",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"Win32_Process"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Identify Python training command",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"-ClassName",
+				"Win32_Process",
+				"-Filter",
+				"Name='python.exe'",
+				"-Property",
+				"ProcessId,CommandLine"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

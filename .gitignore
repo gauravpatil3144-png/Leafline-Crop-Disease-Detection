@@ -1,0 +1,28 @@
+```gitignore
+# Frontend dependencies and build output
+**/node_modules/
+**/dist/
+
+# Environment secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python environments and cache
+**/.venv/
+**/venv/
+**/tf-venv/
+**/__pycache__/
+**/*.py[cod]
+
+# Uploaded user images
+backend/uploads/
+
+# Large training datasets
+Dataset/
+ai-service/dataset/
+
+# Training checkpoints and backup models
+ai-service/models/candidates/
+ai-service/models/backups/
+```

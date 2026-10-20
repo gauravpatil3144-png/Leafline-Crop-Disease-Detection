@@ -1,0 +1,9 @@
+.preliminary-pill.model-ready {
+  background: #e7f1e5;
+  color: #286444;
+}
+
+.preliminary-pill.model-unready {
+  background: #f3edda;
+  color: #806b32;
+}
